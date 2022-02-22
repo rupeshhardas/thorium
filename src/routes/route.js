@@ -7,6 +7,12 @@ router.get('/students/:name', function(req, res) {
     res.send(studentName)
 })
 
+router.get("/movies", function(req,res) {
+    let movies=["fukery", "judwa", "commando", "bahubali", "titanic"]
+    console.log(movies)
+    res.send(movies)
+})
+
 
 
 
