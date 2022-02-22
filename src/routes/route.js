@@ -1,17 +1,4 @@
-
-//  let bj = require("../logger/logger")
-// const express = require('express');
-// const { myN } = require("../logger/logger");
-// const router = express.Router();
-
-// router.get('/test-me', function (req, res) {
-//     bj.welcome()
-//     console.log(bj.myN)
-
-//     res.send('My first ever api!')
-// });
-
-// module.exports = router;     
+    
 
 
 const obj = require('../logger/logger')
