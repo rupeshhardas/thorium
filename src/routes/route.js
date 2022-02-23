@@ -22,7 +22,10 @@ router.get("/movies/:movieId", function(req, res) {
     res.send(movies[value])
     }
 });
-
+router.get("/films/:id" ,function(req, res) {
+    let films=[{"id":1,"name":"The shining"},{"id":2,"name":"Incendies"},{"id":3,"name":"rang de basanti"},{"id":4,"name":"Finding Demo"}]
+    let value=req.params.id
+    res.send(films[value-1])
 
 
 
