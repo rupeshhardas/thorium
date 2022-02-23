@@ -13,6 +13,18 @@ router.get("/movies", function(req,res) {
     res.send(movies)
 })
 
+router.get("/movies/:movieId", function(req, res) {
+    let movies=["fukery", "judwa", "commando", "bahubali", "titanic"]
+    let value=req.params.movieId
+    if(value>movies.length-1){
+        res.send('"movies doesent exit"')
+    } else{
+    res.send(movies[value])
+    }
+});
+
+
+
 
 
 
