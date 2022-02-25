@@ -70,4 +70,116 @@ router.post("/test-post-4", function(req, res) {
     res.send(  { msg: arr , status: true }  )
 })
 
+let player=[
+    {
+        "name": "manish",
+        "dob": "1/1/1995",
+        "gender": "male",
+        "city": "jalandhar",
+        "sports": [
+        "swimming"
+        ],
+        "bookings": [
+        ]
+     },
+     {
+        "name": "Rupesh",
+        "dob": "21/1/1998",
+        "gender": "male",
+        "city": "Nagpur",
+        "sports": [
+        "Cricket"
+        ],
+        "bookings": [
+        ]
+     },                                                                                                                                                                                                                                                                                                         
+     {
+        "name": "suraj",
+        "dob": "1/10/1996",
+        "gender": "male",
+        "city": "delhi",
+        "sports": [
+        "hockey"
+        ],
+        "bookings": [
+        ]
+     },                                                                                                                                                                                                                                                                                                       
+     {
+        "name": "ashish",
+        "dob": "11/1/1997",
+        "gender": "male",
+        "city": "mumbai",
+        "sports": [
+        "football"
+        ],
+        "bookings": [
+        ]
+     },
+     {
+        "name": "sapna",
+        "dob": "1/5/1998",
+        "gender": "female",
+        "city": "gujarat",
+        "sports": [
+        "swimming"
+        ],
+        "bookings": [
+        ]
+     },                                                                                                                                                                                                                                                                                                       
+     {
+        "name": "swati",
+        "dob": "11/10/1996",
+        "gender": "female",
+        "city": "akola",
+        "sports": [
+        "kho-kho"
+        ],
+        "bookings": [
+        ]
+     },
+     {
+        "name": "Akash",
+        "dob": "10/1/1992",
+        "gender": "male",
+        "city": "amravati",
+        "sports": [
+        "kabbadi"
+        ],
+        "bookings": [
+        ]
+     },   
+     {
+        "name": "rohan",
+        "dob": "1/1/1993",
+        "gender": "male",
+        "city": "jaipur",
+        "sports": [
+        "basketball"
+        ],
+        "bookings": [
+        ]
+     },   
+]
+
+router.post('/player',function(req, res) {
+    let element=req.body
+    let ele=0
+    // player.push(element)
+    // res.send(player)
+    
+    for(let i=0;i<player.length;i++){
+        let ele2=player[i].name
+        if(player[i]["name"] === element["name"]){
+            res.send("player alredy exist")
+            ele++
+            
+    }  
+}
+if(ele==0)
+player.push(element)
+res.send(player)
+})
+
+
+
 module.exports = router;
