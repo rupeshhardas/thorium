@@ -30,18 +30,18 @@ router.post("/post-query-1", function (req, res) {
     res.send({ result: data, status: true })
 })
 
-let myArr = [23, 45, 67, 281394, 32424, 423, 24, 42323, 4, 234, 12, 34]
-//filter out all the numbers that are greater than input( input is received from query params)
-router.post("/post-query-2", function (req, res) {
-    //CODE HERE
-    let input= req.query.input
-    let finalArr= myArr.filter( ele => ele > input)
-    // let finalArr=[]
-    // for (i=0 ; i<myArr.length; i++) {
-    //     if ( myArr[i] > input )      finalArr.push(myArr[i]) 
-    // }
-    res.send({ result: finalArr , status: true })
-})
+// let myArr = [23, 45, 67, 281394, 32424, 423, 24, 42323, 4, 234, 12, 34]
+// //filter out all the numbers that are greater than input( input is received from query params)
+// router.post("/post-query-2", function (req, res) {
+//     //CODE HERE
+//     let input= req.query.input
+//     let finalArr= myArr.filter( ele => ele > input)
+//     // let finalArr=[]
+//     // for (i=0 ; i<myArr.length; i++) {
+//     //     if ( myArr[i] > input )      finalArr.push(myArr[i]) 
+//     // }
+//     res.send({ result: finalArr , status: true })
+// })
 
 
 // ASSIGNMENT:
@@ -50,35 +50,57 @@ router.post("/post-query-2", function (req, res) {
 // also return an array consisting of only the person that can vote
 
 //  take this as sample for array of persons:
-// let persons= [
-//     {
-//     name: "PK",
-//     age: 10,
-//     votingStatus: false
-// },
-// {
-//     name: "SK",
-//     age: 20,
-//     votingStatus: false
-// },
-// {
-//     name: "AA",
-//     age: 70,
-//     votingStatus: false
-// },
-// {
-//     name: "SC",
-//     age: 5,
-//     votingStatus: false
-// },
-// {
-//     name: "HO",
-//     age: 40,
-//     votingStatus: false
-// }
-// ]
+let peoples = [
+    {
+    name: "Rupesh Hardas",
+    age: 10,
+    votingStatus: false
+},
+{
+    name: "Anshuman Rajoriya",
+    age: 20,
+    votingStatus: false
+},
+{
+    name: "Pranav Lute",
+    age: 70,
+    votingStatus: false
+},
+{
+    name: "Harshal Purjelwar",
+    age: 5,
+    votingStatus: false
+},
+{
+    name: "Gaurav Rajput",
+    age: 40,
+    votingStatus: false
+},
+{
+    name: "Rohan Rajput",
+    age: 30,
+    votingStatus: false
+},
 
+]
 
+router.post("/post-query-2", function (req, res) {
+    
+    let votingAge = req.query.age;
+    let validVoters = [];
+
+     for (let i = 0; i < peoples.length; i++) {
+
+       if (peoples[i]["age"] > votingAge) {
+          peoples[i]["votingStatus"] = true;
+           validVoters.push(peoples[i]);
+         }
+
+     }
+
+     res.send(validVoters);
+
+    });
 
 
 
