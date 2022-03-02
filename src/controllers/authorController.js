@@ -1,4 +1,5 @@
 const AuthorModel= require("../models/authorModel")
+const publishermodel= require("../models/publishermodel")
 
 const createAuthor= async function (req, res) {
     let author = req.body
@@ -6,10 +7,11 @@ const createAuthor= async function (req, res) {
     res.send({data: authorCreated})
 }
 
-const getAuthorsData= async function (req, res) {
-    let authors = await AuthorModel.find()
-    res.send({data: authors})
+const createPublisher= async function(req, res) {
+    let publishdata = await publishermodel.create(req.body)
+    res.send({data: publishdata})
 }
 
+
 module.exports.createAuthor= createAuthor
-module.exports.getAuthorsData= getAuthorsData
+module.exports.createPublisher=createPublisher
