@@ -8,4 +8,4 @@ headQuarter: String
 },{timestamps: true})
 
 
-module.exports = mongoose.model("publish1", publishSchema)
+module.exports = mongoose.model("publish2", publishSchema)

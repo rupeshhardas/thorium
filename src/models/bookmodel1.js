@@ -7,12 +7,19 @@ const createbookschema= new mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref: "Author1"
     },
-    price:String,
+    price:Number,
     ratings:Number,
     publisher:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"publish1" 
+        ref:"publish2" 
+    },
+    isHardcover:{
+        type: Boolean,
+        default: false
     }
 
 
-})
+},{timestamps: true})
+
+
+module.exports = mongoose.model('allbooks', createbookschema)
