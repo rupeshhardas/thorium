@@ -18,7 +18,7 @@ router.post("/createcandidate", candidatecontroller.createcandidate)
 
 router.post("/logincandidate", candidatecontroller.logincandidate)
 
-router.get("/users/:userId",middleware.middleware, candidatecontroller.getcandidatedata)
+router.get("/users/:userId",middleware.middleware,candidatecontroller.getcandidatedata)
 
 router.put("/users/:userId",middleware.middleware, candidatecontroller.updatecandidate)
 

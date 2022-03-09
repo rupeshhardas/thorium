@@ -15,6 +15,10 @@ const candidateSchema= new mongoose.Schema({
         type: String,
         enum: ["male", "female", "other"]
     },
+    isDelete:{
+        type:Boolean,
+        default:false
+    }
     
 }, { timestamps: true });
 
