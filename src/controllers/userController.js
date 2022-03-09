@@ -41,13 +41,13 @@ const loginUser = async function (req, res) {
 };
 
 const getUserData = async function (req, res) {
-  let token = req.headers["x-Auth-token"];
-  if (!token) token = req.headers["x-auth-token"];
+  // let token = req.headers["x-Auth-token"];
+  // if (!token) token = req.headers["x-auth-token"];
 
-  //If no token is present in the request header return error
-  if (!token) return res.send({ status: false, msg: "token must be present" });
+  // //If no token is present in the request header return error
+  // if (!token) return res.send({ status: false, msg: "token must be present" });
 
-  console.log(token);
+  // console.log(token);
   
   // If a token is present then decode the token with verify function
   // verify takes two inputs:
