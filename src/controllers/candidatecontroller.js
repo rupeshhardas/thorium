@@ -30,7 +30,7 @@ let getcandidatedata= async function(req, res){
 
 
 
-    let candidetail = req.param.userId
+    let candidetail = req.params.userId
     let candidetails=await candidatemodel.findById( candidetail)
     if(!candidetails){
         return res.send("candidate not exit")
@@ -43,14 +43,14 @@ let getcandidatedata= async function(req, res){
 
     let updatecandidate = async function(req,res){
 
-        let data = req.param.userId
+        let data = req.params.userId
         let candidatedetail=await candidatemodel.findById(data)
         if(!candidatedetail){
             return res.send("no candidate found")
         }
 
         let candidatedata=req.body
-        let showdata= await candidatemodel.findAndUpdate({_id:emailId},{$set:candidatedata},{new:true})
+        let showdata= await candidatemodel.findAndUpdate({_id:data},{$set:candidatedata},{new:true})
         res.send({candidate:showdata})
 
 
@@ -58,8 +58,8 @@ let getcandidatedata= async function(req, res){
 
     const deleteUser = async function (req, res) {
         let userId = req.params.userId;
-        let ChangeUserProperty = await userModel.findOneAndUpdate( { _id : userId },{$set : {isDeleted : true }})
-        let deleteUser = await userModel.findByIdAndDelete(userId)
+        let ChangeUserProperty = await candidatemodel.findOneAndUpdate( { _id : userId },{$set : {isDeleted : true }})
+        let deleteUser = await candidatemodel.findByIdAndDelete(userId)
         res.send({msg :"user deleted Succesfully" ,deleteUser })
       
       }
